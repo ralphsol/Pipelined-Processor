@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"D:\processor\regfile.vhd" Line 55: &lt;<arg fmt="%s" index="1">zero</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"D:\processor\regfile.vhd" Line 58: &lt;<arg fmt="%s" index="1">conv_integer</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"D:\processor\regfile.vhd" Line 66: &lt;<arg fmt="%s" index="1">zero</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"D:\processor\regfile.vhd" Line 70: &lt;<arg fmt="%s" index="1">conv_integer</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"D:\processor\regfile.vhd" Line 79: &lt;<arg fmt="%s" index="1">zero</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"D:\processor\regfile.vhd" Line 83: &lt;<arg fmt="%s" index="1">conv_integer</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="854" delta="old" >"D:\processor\regfile.vhd" Line 47: Unit &lt;<arg fmt="%s" index="1">behavioral</arg>&gt; ignored due to previous errors.
+</msg>
+
+</messages>
+
