@@ -54,10 +54,10 @@ begin
 	write: process(clock_rf, rst_rf, RFwa, RFwe, RFw)
 	begin
 		if rst_rf='1' then
-			tmp_rf <= (tmp_rf'range => ZERO);
+			tmp_rf <= (tmp_rf'range => "00000000000000000000000000000000");
 		elsif (clock_rf'event and clock_rf='1') then
 			if RFwe='1' then
-				tmp_rf(to_integer(RFwa)) <= RFw;
+				tmp_rf(to_integer(unsigned( RFwa ))) <= RFw;
 			end if;
 		end if;
 	end process;
@@ -65,11 +65,11 @@ begin
 	read1: process(clock_rf, rst_rf, RFr1e, RFr1a)
 	begin
 		if rst_rf='1' then
-			RFr1 <= ZERO;
+			RFr1 <= "00000000000000000000000000000000";
 		else
 			if (clock_rf'event and clock_rf='1') then
 				if RFr1e='1'  then
-					RFr1 <= tmp_rf(to_integer(RFr1a));
+					RFr1 <= tmp_rf(to_integer(unsigned( RFr1a )));
 				end if;
 			end if;
 		end if;
@@ -78,11 +78,11 @@ begin
 	read2: process(clock_rf, rst_rf, RFr2e, RFr2a)
 	begin
 		if rst_rf='1' then
-			RFr2 <= ZERO;
+			RFr2 <= "00000000000000000000000000000000";
 		else
 			if (clock_rf'event and clock_rf='1') then
 				if RFr2e='1'  then
-					RFr2 <= tmp_rf(to_integer(RFr2a));
+					RFr2 <= tmp_rf(to_integer(unsigned( RFr2a )));
 				end if;
 			end if;
 		end if;
