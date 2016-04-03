@@ -31,30 +31,34 @@ use ieee.numeric_std.all;
 --use UNISIM.VComponents.all;
 
 entity progcounter is
-port(	--clock_pc:	in std_logic;
-		pcld:	in std_logic;
-		pcinc:	in std_logic;
-		pcclr:	in std_logic;
-		pcin:	in std_logic_vector(31 downto 0);
+port(	clock_pc:	in std_logic;
+		--pcld:	in std_logic;
+		--pcinc:	in std_logic;
+		--pcclr:	in std_logic;
+		pcin:	in std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
 		pcout:	out std_logic_vector(31 downto 0)
 );
 end progcounter;
 
 architecture Behavioral of progcounter is
-signal tmp_pc: std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+--signal tmp_pc: std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
 begin
-	process(pcclr, pcinc, pcld, pcin)
+	process(clock_pc , pcin)
 	begin
-		if pcclr='1' then
-			tmp_pc <= "00000000000000000000000000000000";
-		elsif (pcld'event and pcld = '1') then
-			tmp_pc <= pcin;
-		elsif (pcinc'event and pcinc = '1') then
-			--tmp_pc <= tmp_pc + 1;
-			tmp_pc <= std_logic_vector(to_unsigned(to_integer(unsigned( tmp_pc )) + 1, 32));
+		if (clock_pc'event and clock_pc='1') then
+			pcout <= pcin;
 		end if;
 	end process;
-	pcout <= tmp_pc;
+		--if pcclr='1' then
+			--tmp_pc <= "00000000000000000000000000000000";
+		--elsif (pcld'event and pcld = '1') then
+			--tmp_pc <= pcin;
+		--elsif (pcinc'event and pcinc = '1') then
+			--tmp_pc <= tmp_pc + 1;
+			--tmp_pc <= std_logic_vector(to_unsigned(to_integer(unsigned( tmp_pc )) + 1, 32));
+		--end if;
+	--end process;
+	--pcout <= tmp_pc;
 
 end Behavioral;
 

@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity shift is
-port( 	I_Shift: 	in std_logic_vector(23 downto 0);
+port( I_Shift: 	in std_logic_vector(23 downto 0);
 		O_Shift: 	out std_logic_vector(31 downto 0)
 	);
 end shift;

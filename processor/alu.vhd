@@ -31,7 +31,7 @@ use ieee.numeric_std.all;
 --use UNISIM.VComponents.all;
 
 entity alu is
-	PORT (	S_alu 		: IN 	STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+	PORT (S_alu : IN 	STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 			A, B	: IN 	STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 			F 		: OUT 	STD_LOGIC_VECTOR(31 DOWNTO 0) ) ;
 end alu;
@@ -71,7 +71,7 @@ begin
 		ElSIF ((S_alu(26 downto 25)="00")and(S_alu(24 downto 21)="1100")) THEN	-- ORR
 			F <= A or B;
 		ElSIF ((S_alu(26 downto 25)="00")and(S_alu(24 downto 21)="1101")) THEN	-- MOV
-			F(31 downto 28) <= B;
+			F <= B;
 		ElSIF ((S_alu(26 downto 25)="00")and(S_alu(24 downto 21)="1110")) THEN	-- BIC
 			F <= A and (not B);
 		ElSIF ((S_alu(26 downto 25)="00")and(S_alu(24 downto 21)="1111")) THEN	-- MVN

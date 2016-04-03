@@ -1,0 +1,29 @@
+Command line:
+   muxa_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  36022
+
+Sun Apr 03 12:36:13 2016
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 361.497 Meg
+
+ Total Signals          : 4
+ Total Nets             : 13
+ Total Signal Drivers   : 1
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 1
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 373
+Total Line Count : 3
+
+ Total Simulation Time: 0.09375 sec
+
+ Current Memory Usage: 676.086 Meg
+
+Sun Apr 03 12:37:20 2016
+

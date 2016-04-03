@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity muxa is
-port( 	I0a: 	in std_logic_vector(3 downto 0);
+port( I0a: 	in std_logic_vector(3 downto 0);
 		I1a: 	in std_logic_vector(3 downto 0);
 		Sel_muxa:	in std_logic;
 		O_muxa: 		out std_logic_vector(3 downto 0)

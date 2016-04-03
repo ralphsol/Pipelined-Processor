@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:08:44 03/28/2016
+-- Create Date:   11:32:55 04/03/2016
 -- Design Name:   
 -- Module Name:   D:/processor/test_alu.vhd
 -- Project Name:  processor
@@ -44,6 +44,7 @@ ARCHITECTURE behavior OF test_alu IS
          S_alu : IN  std_logic_vector(31 downto 0);
          A : IN  std_logic_vector(31 downto 0);
          B : IN  std_logic_vector(31 downto 0);
+         Flags : OUT  std_logic_vector(1 downto 0);
          F : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
@@ -55,6 +56,7 @@ ARCHITECTURE behavior OF test_alu IS
    signal B : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
+   signal Flags : std_logic_vector(1 downto 0);
    signal F : std_logic_vector(31 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
@@ -67,6 +69,7 @@ BEGIN
           S_alu => S_alu,
           A => A,
           B => B,
+          Flags => Flags,
           F => F
         );
 

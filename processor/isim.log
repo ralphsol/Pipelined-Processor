@@ -1,5 +1,5 @@
 ISim log file
-Running: D:\processor\test_datamem_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb D:/processor/test_datamem_isim_beh.wdb 
+Running: D:\processor\test_datapath_fin_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb D:/processor/test_datapath_fin_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -10,17 +10,10 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /test_datapath_fin/uut/U2/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_datapath_fin/uut/U5/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_datapath_fin/uut/U12/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-# isim force add /test_datamem/mre 0 -radix bin -value 1 -radix bin -time 10 ns -repeat 20 ns
-# isim force add /test_datamem/mwe 1 -radix bin -value 0 -radix bin -time 10 ns -repeat 20 ns
-# run 1.00us
-# run 1.00us
-# isim force add /test_datamem/address 5 -radix unsigned -cancel 20 ns
-# isim force add /test_datamem/data_in 12 -radix unsigned -cancel 10 ns
-# run 1.00us
-# run 1.00us
-# run 20ns
-# isim force add /test_datamem/address 5 -radix unsigned -cancel 20 ns
-# isim force add /test_datamem/data_in 12 -radix unsigned -cancel 10 ns
-# run 20ns
-# run 20ns
+at 0 ps, Instance /test_datapath_fin/uut/U4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_datapath_fin/uut/U4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_datapath_fin/uut/U12/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

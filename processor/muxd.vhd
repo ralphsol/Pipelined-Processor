@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity muxd is
-port( 	I0d: 	in std_logic_vector(31 downto 0);
+port( I0d: 	in std_logic_vector(31 downto 0);
 		I1d: 	in std_logic_vector(31 downto 0);
 		Sel_muxd:	in std_logic;
 		O_muxd: 		out std_logic_vector(31 downto 0)

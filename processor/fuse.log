@@ -1,19 +1,46 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/processor/test_datamem_isim_beh.exe -prj D:/processor/test_datamem_beh.prj work.test_datamem 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/processor/test_datapath_fin_isim_beh.exe -prj D:/processor/test_datapath_fin_beh.prj work.test_datapath_fin 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "D:/processor/shift.vhd" into library work
+Parsing VHDL file "D:/processor/regfile.vhd" into library work
+Parsing VHDL file "D:/processor/progcounter.vhd" into library work
+Parsing VHDL file "D:/processor/muxd.vhd" into library work
+Parsing VHDL file "D:/processor/muxc.vhd" into library work
+Parsing VHDL file "D:/processor/muxb.vhd" into library work
+Parsing VHDL file "D:/processor/muxa.vhd" into library work
+Parsing VHDL file "D:/processor/IM.vhd" into library work
+Parsing VHDL file "D:/processor/extend.vhd" into library work
 Parsing VHDL file "D:/processor/datamem.vhd" into library work
-Parsing VHDL file "D:/processor/test_datamem.vhd" into library work
+Parsing VHDL file "D:/processor/alu.vhd" into library work
+Parsing VHDL file "D:/processor/addb.vhd" into library work
+Parsing VHDL file "D:/processor/add4.vhd" into library work
+Parsing VHDL file "D:/processor/datapath_fin.vhd" into library work
+Parsing VHDL file "D:/processor/test_datapath_fin.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
+Compiling architecture behavioral of entity progcounter [progcounter_default]
+Compiling architecture behavioral of entity IM [im_default]
+Compiling architecture behavioral of entity regfile [regfile_default]
+Compiling architecture behavioral of entity alu [alu_default]
+Compiling architecture behavioral of entity add4 [add4_default]
+Compiling architecture behavioral of entity muxa [muxa_default]
+Compiling architecture behavioral of entity extend [extend_default]
+Compiling architecture behavioral of entity muxb [muxb_default]
 Compiling architecture behavioral of entity datamem [datamem_default]
-Compiling architecture behavior of entity test_datamem
+Compiling architecture behavioral of entity muxc [muxc_default]
+Compiling architecture behavioral of entity shift [shift_default]
+Compiling architecture behavioral of entity addb [addb_default]
+Compiling architecture behavioral of entity muxd [muxd_default]
+Compiling architecture behavioral of entity datapath_fin [datapath_fin_default]
+Compiling architecture behavior of entity test_datapath_fin
 Time Resolution for simulation is 1ps.
-Compiled 6 VHDL Units
-Built simulation executable D:/processor/test_datamem_isim_beh.exe
-Fuse Memory Usage: 34040 KB
-Fuse CPU Usage: 687 ms
+Waiting for 10 sub-compilation(s) to finish...
+Compiled 32 VHDL Units
+Built simulation executable D:/processor/test_datapath_fin_isim_beh.exe
+Fuse Memory Usage: 34468 KB
+Fuse CPU Usage: 733 ms

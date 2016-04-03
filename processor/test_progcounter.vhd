@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   09:44:28 03/28/2016
+-- Create Date:   10:38:25 04/03/2016
 -- Design Name:   
 -- Module Name:   D:/processor/test_progcounter.vhd
 -- Project Name:  processor
@@ -41,9 +41,7 @@ ARCHITECTURE behavior OF test_progcounter IS
  
     COMPONENT progcounter
     PORT(
-         pcld : IN  std_logic;
-         pcinc : IN  std_logic;
-         pcclr : IN  std_logic;
+         clock_pc : IN  std_logic;
          pcin : IN  std_logic_vector(31 downto 0);
          pcout : OUT  std_logic_vector(31 downto 0)
         );
@@ -51,28 +49,32 @@ ARCHITECTURE behavior OF test_progcounter IS
     
 
    --Inputs
-   signal pcld : std_logic := '0';
-   signal pcinc : std_logic := '0';
-   signal pcclr : std_logic := '0';
+   signal clock_pc : std_logic := '0';
    signal pcin : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
    signal pcout : std_logic_vector(31 downto 0);
-   -- No clocks detected in port list. Replace <clock> below with 
-   -- appropriate port name 
+
+   -- Clock period definitions
+   constant clock_pc_period : time := 10 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: progcounter PORT MAP (
-          pcld => pcld,
-          pcinc => pcinc,
-          pcclr => pcclr,
+          clock_pc => clock_pc,
           pcin => pcin,
           pcout => pcout
         );
 
    -- Clock process definitions
+   clock_pc_process :process
+   begin
+		clock_pc <= '0';
+		wait for clock_pc_period/2;
+		clock_pc <= '1';
+		wait for clock_pc_period/2;
+   end process;
  
 
    -- Stimulus process
@@ -80,6 +82,8 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+
+      wait for clock_pc_period*10;
 
       -- insert stimulus here 
 

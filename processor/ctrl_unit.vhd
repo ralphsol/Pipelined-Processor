@@ -30,12 +30,38 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity ctrl_unit is
+port( I_ctrl: 	in std_logic_vector(4 downto 0);	-- ins[31:28]
+		I_p:	 	in std_logic;							-- p
+		O_ctrl: 	out std_logic_vector(5 downto 0)	-- Rsrc  RW  MW  MR  Psrc Fset
+	);
 end ctrl_unit;
 
 architecture Behavioral of ctrl_unit is
 
-begin
+-- x's replaced by zero's
 
+begin
+	process(I_ctrl, I_p)
+	begin
+		O_ctrl <= "000000";
+		if (I_ctrl="00000" or I_ctrl="00010") then
+			O_ctrl <= "0" & I_p & "0000";
+		elsif (I_ctrl="00001" or I_ctrl="00011") then
+			O_ctrl <= "0" & I_p & "000" & I_p;
+		elsif (I_ctrl="00010" or I_ctrl="00110") then
+			O_ctrl <= "0" & I_p & "0000";
+		elsif (I_ctrl="00011" or I_ctrl="00111") then
+			O_ctrl <= "0" & I_p & "000" & I_p;
+		elsif (I_ctrl="00100" or I_ctrl="00101") then
+			O_ctrl <= "0000" & I_p;
+		elsif (I_ctrl(4)='0' and I_ctrl(3)='1' and I_ctrl(0)='0') then
+			O_ctrl <= "10" & I_p & "000";
+		elsif (I_ctrl(4)='0' and I_ctrl(3)='1' and I_ctrl(0)='1') then
+			O_ctrl <= "1" & I_p & "0100";
+		elsif (I_ctrl(4)='1' and I_ctrl(3)='0') then
+			O_ctrl(4 downto 0) <= "000" & I_p & "0";
+		end if;
+	end process;
 
 end Behavioral;
 

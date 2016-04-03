@@ -33,7 +33,6 @@ use ieee.numeric_std.all;
 entity regfile is
 port ( 	
 	clock_rf	: 	in std_logic; 	
-	rst_rf: 	in std_logic;
 	RFwe	: 	in std_logic;										-- signal when write occurs
 	RFr1e	: 	in std_logic;										-- signal when read1 occurs
 	RFr2e	: 	in std_logic;										-- signal when read2 occurs
@@ -48,42 +47,29 @@ end regfile;
 
 architecture Behavioral of regfile is
 	type rf_type is array (0 to 15) of std_logic_vector(31 downto 0);
-	signal tmp_rf: rf_type;
-
+	signal tmp_rf: rf_type := ("00000000000000000000000000001000", "00000000000000000000000000001001", "00000000000000000000000000001010", "00000000000000000000000000001011", "00000000000000000000000000001000", "00000000000000000000000000001001", "00000000000000000000000000001010", "00000000000000000000000000001011", "00000000000000000000000000001000", "00000000000000000000000000001001", "00000000000000000000000000001010", "00000000000000000000000000001011", "00000000000000000000000000001000", "00000000000000000000000000001001", "00000000000000000000000000001010", "00000000000000000000000000001011");
 begin
-	write: process(clock_rf, rst_rf, RFwa, RFwe, RFw)
+	write: process(clock_rf, RFwa, RFwe, RFw)
 	begin
-		if rst_rf='1' then
-			tmp_rf <= (tmp_rf'range => "00000000000000000000000000000000");
-		elsif (clock_rf'event and clock_rf='1') then
-			if RFwe='1' then
-				tmp_rf(to_integer(unsigned( RFwa ))) <= RFw;
+		if RFwe='1' then
+			tmp_rf(to_integer(unsigned( RFwa ))) <= RFw;
+		end if;
+	end process;
+	
+	read1: process(clock_rf, RFr1e, RFr1a)
+	begin
+		if (clock_rf'event and clock_rf='1') then
+			if RFr1e='1'  then
+				RFr1 <= tmp_rf(to_integer(unsigned( RFr1a )));
 			end if;
 		end if;
 	end process;
 	
-	read1: process(clock_rf, rst_rf, RFr1e, RFr1a)
+	read2: process(clock_rf, RFr2e, RFr2a)
 	begin
-		if rst_rf='1' then
-			RFr1 <= "00000000000000000000000000000000";
-		else
-			if (clock_rf'event and clock_rf='1') then
-				if RFr1e='1'  then
-					RFr1 <= tmp_rf(to_integer(unsigned( RFr1a )));
-				end if;
-			end if;
-		end if;
-	end process;
-	
-	read2: process(clock_rf, rst_rf, RFr2e, RFr2a)
-	begin
-		if rst_rf='1' then
-			RFr2 <= "00000000000000000000000000000000";
-		else
-			if (clock_rf'event and clock_rf='1') then
-				if RFr2e='1'  then
-					RFr2 <= tmp_rf(to_integer(unsigned( RFr2a )));
-				end if;
+		if (clock_rf'event and clock_rf='1') then
+			if RFr2e='1'  then
+				RFr2 <= tmp_rf(to_integer(unsigned( RFr2a )));
 			end if;
 		end if;
 	end process;

@@ -51,13 +51,12 @@
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>controller.vhd</SelectedItem>
-         <SelectedItem>ctrl_unit.vhd</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000000e7000000010001000100000000000000000000000064ffffffff000000810000000000000001000000e70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>ctrl_unit.vhd</CurrentItem>
+      <CurrentItem>controller.vhd</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -83,15 +82,28 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/datapath - Behavioral D:|processor|datapath.vhd</ClosedNode>
          <ClosedNode>/test - behavior D:|processor|test.vhd</ClosedNode>
+         <ClosedNode>/test_IM - behavior D:|processor|test_IM.vhd</ClosedNode>
+         <ClosedNode>/test_add4 - behavior D:|processor|test_add4.vhd</ClosedNode>
+         <ClosedNode>/test_addb - behavior D:|processor|test_addb.vhd</ClosedNode>
+         <ClosedNode>/test_alu - behavior D:|processor|test_alu.vhd</ClosedNode>
+         <ClosedNode>/test_datamem - behavior D:|processor|test_datamem.vhd</ClosedNode>
+         <ClosedNode>/test_extend - behavior D:|processor|test_extend.vhd</ClosedNode>
+         <ClosedNode>/test_muxa - behavior D:|processor|test_muxa.vhd</ClosedNode>
+         <ClosedNode>/test_muxb - behavior D:|processor|test_muxb.vhd</ClosedNode>
+         <ClosedNode>/test_muxc - behavior D:|processor|test_muxc.vhd</ClosedNode>
+         <ClosedNode>/test_muxd - behavior D:|processor|test_muxd.vhd</ClosedNode>
+         <ClosedNode>/test_progcounter - behavior D:|processor|test_progcounter.vhd</ClosedNode>
+         <ClosedNode>/test_regfile - behavior D:|processor|test_regfile.vhd</ClosedNode>
+         <ClosedNode>/test_shift - behavior D:|processor|test_shift.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Unassigned User Library Modules</SelectedItem>
+         <SelectedItem>test_datamem - behavior (D:/processor/test_datamem.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >5</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000015c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000015c0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000152000000020000000000000000000000000200000064ffffffff000000810000000300000002000001520000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Unassigned User Library Modules</CurrentItem>
+      <CurrentItem>test_datamem - behavior (D:/processor/test_datamem.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -112,12 +124,12 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>

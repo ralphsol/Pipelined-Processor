@@ -32,7 +32,7 @@ use ieee.numeric_std.all;
 
 entity add4 is
 port( 	I_add4: 	in std_logic_vector(31 downto 0);
-		O_add4: 	out std_logic_vector(31 downto 0)
+		O_add4: 	out std_logic_vector(31 downto 0) := "00000000000000000000000000000000"
 	);
 end add4;
 

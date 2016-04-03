@@ -19,6 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -31,23 +32,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity IM is
 port(	IMin:	  in std_logic_vector(31 downto 0);
-		IMld:	  in std_logic;
-		dir_addr: out std_logic_vector(31 downto 0);
 		IMout: 	  out std_logic_vector(31 downto 0)
 );
 end IM;
 
 architecture Behavioral of IM is
+	type rf_type is array (0 to 3) of std_logic_vector(31 downto 0);
+	signal tmp_rf: rf_type := ("00000000000000000011000000000001", "00000000000000000000000000000010", "00000000000000000000000000000001", "00000000000000000000000000000000");
 
 begin
-	process(IMld, IMin)
+	process(IMin)
 	begin
-		if IMld='1' then
-			IMout <= IMin;
-			-- dir_addr <= "0000000000000000" & IRin(15 downto 0); don't know if needed
-		end if;
+		IMout <= tmp_rf(to_integer(unsigned( IMin )));
 	end process;
-
 
 end Behavioral;
 
