@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity ctrl_unit is
-port( I_ctrl: 	in std_logic_vector(4 downto 0);	-- ins[31:28]
+port( I_ctrl: 	in std_logic_vector(4 downto 0);	-- ins[27, 26, 24, 23, 20]
 		I_p:	 	in std_logic;							-- p
 		O_ctrl: 	out std_logic_vector(5 downto 0)	-- Rsrc  RW  MW  MR  Psrc Fset
 	);
@@ -53,7 +53,7 @@ begin
 		elsif (I_ctrl="00011" or I_ctrl="00111") then
 			O_ctrl <= "0" & I_p & "000" & I_p;
 		elsif (I_ctrl="00100" or I_ctrl="00101") then
-			O_ctrl <= "0000" & I_p;
+			O_ctrl <= "00000" & I_p;
 		elsif (I_ctrl(4)='0' and I_ctrl(3)='1' and I_ctrl(0)='0') then
 			O_ctrl <= "10" & I_p & "000";
 		elsif (I_ctrl(4)='0' and I_ctrl(3)='1' and I_ctrl(0)='1') then

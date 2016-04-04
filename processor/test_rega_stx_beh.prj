@@ -1,0 +1,2 @@
+vhdl isim_temp "rega.vhd"
+vhdl isim_temp "test_rega.vhd"

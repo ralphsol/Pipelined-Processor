@@ -1,0 +1,2 @@
+vhdl work "regifid.vhd"
+vhdl work "test_regifid.vhd"

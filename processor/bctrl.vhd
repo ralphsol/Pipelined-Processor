@@ -101,8 +101,6 @@ begin
 			elsif (I_zcnv(3)='1') then
 				O_bctrl <= '1';
 			end if;
-		elsif (I_bctrl="1110") then
-			O_bctrl <= O_bctrl;
 		end if;
 	end process;
 end Behavioral;

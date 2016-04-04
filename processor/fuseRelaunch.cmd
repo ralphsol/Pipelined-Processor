@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "D:/processor/test_datapath_fin_isim_beh.exe" -prj "D:/processor/test_datapath_fin_beh.prj" "work.test_datapath_fin" 
+-intstyle "ise" -incremental -lib "secureip" -o "D:/processor/test_datapth_fin_isim_beh.exe" -prj "D:/processor/test_datapth_fin_beh.prj" "work.test_datapth_fin" 
