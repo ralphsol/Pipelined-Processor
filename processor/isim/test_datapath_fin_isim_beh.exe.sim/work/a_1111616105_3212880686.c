@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/processor/regfile.vhd";
+static const char *ng0 = "D:/Assignment3/regfile.vhd";
 extern char *IEEE_P_1242562249;
 
 int ieee_p_1242562249_sub_1657552908_1035706684(char *, char *, char *);
@@ -64,7 +64,7 @@ LAB2:    xsi_set_current_line(55, ng0);
     t5 = *((char **)t1);
     t1 = (t0 + 1672U);
     t6 = *((char **)t1);
-    t1 = (t0 + 6996U);
+    t1 = (t0 + 7028U);
     t7 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t6, t1);
     t8 = (t7 - 0);
     t9 = (t8 * 1);
@@ -146,7 +146,7 @@ LAB8:    xsi_set_current_line(63, ng0);
     t11 = *((char **)t4);
     t4 = (t0 + 1832U);
     t12 = *((char **)t4);
-    t4 = (t0 + 7012U);
+    t4 = (t0 + 7044U);
     t13 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t12, t4);
     t14 = (t13 - 0);
     t15 = (t14 * 1);
@@ -230,7 +230,7 @@ LAB8:    xsi_set_current_line(72, ng0);
     t11 = *((char **)t4);
     t4 = (t0 + 1992U);
     t12 = *((char **)t4);
-    t4 = (t0 + 7028U);
+    t4 = (t0 + 7060U);
     t13 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t12, t4);
     t14 = (t13 - 0);
     t15 = (t14 * 1);

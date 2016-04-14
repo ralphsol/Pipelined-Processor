@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/processor/shift.vhd";
+static const char *ng0 = "D:/Assignment3/shift.vhd";
 extern char *IEEE_P_2592010699;
 
 
@@ -173,9 +173,9 @@ LAB0:    xsi_set_current_line(42, ng0);
     t58 = (t0 + 1032U);
     t59 = *((char **)t58);
     t61 = ((IEEE_P_2592010699) + 4024);
-    t62 = (t0 + 4136U);
+    t62 = (t0 + 4148U);
     t58 = xsi_base_array_concat(t58, t60, t61, (char)97, t55, t56, (char)97, t59, t62, (char)101);
-    t63 = (t0 + 4200);
+    t63 = (t0 + 4212);
     t67 = ((IEEE_P_2592010699) + 4024);
     t69 = (t68 + 0U);
     t70 = (t69 + 0U);

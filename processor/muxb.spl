@@ -1,7 +1,0 @@
-[Inputs]
-Sel_muxb
-=I0b[31:0]=
-=I1b[31:0]=
-[Outputs]
-=O_muxb[31:0]=
-[BiDir]

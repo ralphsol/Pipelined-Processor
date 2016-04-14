@@ -33,10 +33,13 @@ use ieee.numeric_std.all;
 entity alu is
 	PORT (S_alu : IN 	STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 			A, B	: IN 	STD_LOGIC_VECTOR(31 DOWNTO 0) ;
-			F 		: OUT 	STD_LOGIC_VECTOR(31 DOWNTO 0) ) ;
+			FLAGS	: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+			F 		: INOUT 	STD_LOGIC_VECTOR(31 DOWNTO 0) ) ;
 end alu;
 
 architecture Behavioral of alu is
+
+SIGNAL TMP : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
 begin
 	PROCESS ( S_alu, A, B )
@@ -84,6 +87,7 @@ begin
 --			F(31 downto 28) <= A and B;
 --		ElSIF ((S_alu(26 downto 25)="00")and(S_alu(23)='1')) THEN	-- STR
 --			F(31 downto 28) <= A and B;
+		FLAGS <= F(26 DOWNTO 25);
 		END IF;
 	END PROCESS ;
 

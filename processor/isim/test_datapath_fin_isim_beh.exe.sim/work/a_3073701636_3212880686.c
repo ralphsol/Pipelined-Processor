@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/processor/datamem.vhd";
+static const char *ng0 = "D:/Assignment3/datamem.vhd";
 extern char *IEEE_P_1242562249;
 
 int ieee_p_1242562249_sub_1657552908_1035706684(char *, char *, char *);
@@ -100,7 +100,7 @@ LAB8:    xsi_set_current_line(54, ng0);
     t15 = *((char **)t4);
     t4 = (t0 + 1512U);
     t16 = *((char **)t4);
-    t4 = (t0 + 5876U);
+    t4 = (t0 + 5900U);
     t17 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t16, t4);
     t18 = (t17 - 0);
     t19 = (t18 * 1);
@@ -198,7 +198,7 @@ LAB8:    xsi_set_current_line(63, ng0);
     t15 = *((char **)t4);
     t4 = (t0 + 1512U);
     t16 = *((char **)t4);
-    t4 = (t0 + 5876U);
+    t4 = (t0 + 5900U);
     t17 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t16, t4);
     t18 = (t17 - 0);
     t19 = (t18 * 1);

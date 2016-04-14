@@ -2,10 +2,10 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   10:13:10 04/11/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
--- Project Name:  processor
+-- Module Name:   D:/Assignment3/test_alu.vhd
+-- Project Name:  Assignment3
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
@@ -44,8 +44,8 @@ ARCHITECTURE behavior OF test_alu IS
          S_alu : IN  std_logic_vector(31 downto 0);
          A : IN  std_logic_vector(31 downto 0);
          B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         FLAGS : OUT  std_logic_vector(1 downto 0);
+         F : INOUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
@@ -55,12 +55,13 @@ ARCHITECTURE behavior OF test_alu IS
    signal A : std_logic_vector(31 downto 0) := (others => '0');
    signal B : std_logic_vector(31 downto 0) := (others => '0');
 
- 	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
+	--BiDirs
    signal F : std_logic_vector(31 downto 0);
+
+ 	--Outputs
+   signal FLAGS : std_logic_vector(1 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
- 
  
 BEGIN
  
@@ -69,7 +70,7 @@ BEGIN
           S_alu => S_alu,
           A => A,
           B => B,
-          Flags => Flags,
+          FLAGS => FLAGS,
           F => F
         );
 
@@ -81,6 +82,7 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+
 
       -- insert stimulus here 
 

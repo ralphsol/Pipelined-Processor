@@ -1,35 +1,25 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/processor/test_datapth_fin_isim_beh.exe -prj D:/processor/test_datapth_fin_beh.prj work.test_datapth_fin 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/Assignment3/test_controller_isim_beh.exe -prj D:/Assignment3/test_controller_beh.prj work.test_controller 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "D:/processor/shift.vhd" into library work
-Parsing VHDL file "D:/processor/regmemwb3.vhd" into library work
-Parsing VHDL file "D:/processor/regmemwb2.vhd" into library work
-Parsing VHDL file "D:/processor/regmemwb1.vhd" into library work
-Parsing VHDL file "D:/processor/regifid.vhd" into library work
-Parsing VHDL file "D:/processor/regidex5.vhd" into library work
-Parsing VHDL file "D:/processor/regidex4.vhd" into library work
-Parsing VHDL file "D:/processor/regidex3.vhd" into library work
-Parsing VHDL file "D:/processor/regidex2.vhd" into library work
-Parsing VHDL file "D:/processor/regidex1.vhd" into library work
-Parsing VHDL file "D:/processor/regfile.vhd" into library work
-Parsing VHDL file "D:/processor/regexmem3.vhd" into library work
-Parsing VHDL file "D:/processor/regexmem2.vhd" into library work
-Parsing VHDL file "D:/processor/regexmem1.vhd" into library work
-Parsing VHDL file "D:/processor/progcounter.vhd" into library work
-Parsing VHDL file "D:/processor/muxd.vhd" into library work
-Parsing VHDL file "D:/processor/muxc.vhd" into library work
-Parsing VHDL file "D:/processor/muxb.vhd" into library work
-Parsing VHDL file "D:/processor/muxa.vhd" into library work
-Parsing VHDL file "D:/processor/IM.vhd" into library work
-Parsing VHDL file "D:/processor/extend.vhd" into library work
-Parsing VHDL file "D:/processor/datamem.vhd" into library work
-Parsing VHDL file "D:/processor/alu.vhd" into library work
-Parsing VHDL file "D:/processor/addb.vhd" into library work
-Parsing VHDL file "D:/processor/add4.vhd" into library work
-Parsing VHDL file "D:/processor/datapath_fin.vhd" into library work
-Parsing VHDL file "D:/processor/test_datapth_fin.vhd" into library work
+Parsing VHDL file "D:/Assignment3/shift.vhd" into library work
+Parsing VHDL file "D:/Assignment3/regfile.vhd" into library work
+Parsing VHDL file "D:/Assignment3/progcounter.vhd" into library work
+Parsing VHDL file "D:/Assignment3/muxd.vhd" into library work
+Parsing VHDL file "D:/Assignment3/muxc.vhd" into library work
+Parsing VHDL file "D:/Assignment3/muxb.vhd" into library work
+Parsing VHDL file "D:/Assignment3/muxa.vhd" into library work
+Parsing VHDL file "D:/Assignment3/IM.vhd" into library work
+Parsing VHDL file "D:/Assignment3/extend.vhd" into library work
+Parsing VHDL file "D:/Assignment3/datamem.vhd" into library work
+Parsing VHDL file "D:/Assignment3/ctrl_unit.vhd" into library work
+Parsing VHDL file "D:/Assignment3/bctrl.vhd" into library work
+Parsing VHDL file "D:/Assignment3/alu.vhd" into library work
+Parsing VHDL file "D:/Assignment3/addb.vhd" into library work
+Parsing VHDL file "D:/Assignment3/add4.vhd" into library work
+Parsing VHDL file "D:/Assignment3/controller.vhd" into library work
+Parsing VHDL file "D:/Assignment3/test_controller.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -48,23 +38,13 @@ Compiling architecture behavioral of entity muxc [muxc_default]
 Compiling architecture behavioral of entity shift [shift_default]
 Compiling architecture behavioral of entity addb [addb_default]
 Compiling architecture behavioral of entity muxd [muxd_default]
-Compiling architecture behavioral of entity regifid [regifid_default]
-Compiling architecture behavioral of entity regidex1 [regidex1_default]
-Compiling architecture behavioral of entity regidex2 [regidex2_default]
-Compiling architecture behavioral of entity regidex3 [regidex3_default]
-Compiling architecture behavioral of entity regidex4 [regidex4_default]
-Compiling architecture behavioral of entity regidex5 [regidex5_default]
-Compiling architecture behavioral of entity regexmem1 [regexmem1_default]
-Compiling architecture behavioral of entity regexmem2 [regexmem2_default]
-Compiling architecture behavioral of entity regexmem3 [regexmem3_default]
-Compiling architecture behavioral of entity regmemwb1 [regmemwb1_default]
-Compiling architecture behavioral of entity regmemwb2 [regmemwb2_default]
-Compiling architecture behavioral of entity regmemwb3 [regmemwb3_default]
-Compiling architecture behavioral of entity datapath_fin [datapath_fin_default]
-Compiling architecture behavior of entity test_datapth_fin
+Compiling architecture behavioral of entity bctrl [bctrl_default]
+Compiling architecture behavioral of entity ctrl_unit [ctrl_unit_default]
+Compiling architecture behavioral of entity controller [controller_default]
+Compiling architecture behavior of entity test_controller
 Time Resolution for simulation is 1ps.
-Waiting for 21 sub-compilation(s) to finish...
-Compiled 56 VHDL Units
-Built simulation executable D:/processor/test_datapth_fin_isim_beh.exe
-Fuse Memory Usage: 34900 KB
-Fuse CPU Usage: 921 ms
+Waiting for 7 sub-compilation(s) to finish...
+Compiled 36 VHDL Units
+Built simulation executable D:/Assignment3/test_controller_isim_beh.exe
+Fuse Memory Usage: 35704 KB
+Fuse CPU Usage: 686 ms

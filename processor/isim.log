@@ -1,5 +1,5 @@
 ISim log file
-Running: D:\processor\test_datapth_fin_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb D:/processor/test_datapth_fin_isim_beh.wdb 
+Running: D:\Assignment3\test_controller_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb D:/Assignment3/test_controller_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -10,10 +10,14 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-at 0 ps, Instance /test_datapth_fin/uut/U2/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /test_datapth_fin/uut/U5/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /test_datapth_fin/uut/U12/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_controller/uut/U2/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_controller/uut/U5/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_controller/uut/U12/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-at 0 ps, Instance /test_datapth_fin/uut/U4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /test_datapth_fin/uut/U4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /test_datapth_fin/uut/U12/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_controller/uut/U4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_controller/uut/U4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /test_controller/uut/U12/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+ERROR: Index 4 out of bound 0 to 3. 
+ERROR: In process IM.vhd:44 
+ 
+INFO: Simulator is stopped.

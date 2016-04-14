@@ -1,2 +1,0 @@
-http://esd.cs.ucr.edu/labs/tutorial/ was used as the reference code, upon which
-I have built my code

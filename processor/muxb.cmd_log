@@ -1,4 +1,0 @@
-vhdtdtfi -lib work muxb.vhd -prj processor -o muxb.spl -module muxb -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family artix7 muxb.spl D:/processor/muxb.sym 
-vhdtdtfi -lib work muxb.vhd -prj processor -o muxb.spl -module muxb -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family artix7 muxb.spl D:/processor/muxb.sym 
