@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   08:58:49 03/28/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
+-- Module Name:   D:/processor/test_muxb.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: alu
+-- VHDL Test Bench Created by ISE for module: muxb
 -- 
 -- Dependencies:
 -- 
@@ -32,32 +32,30 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_alu IS
-END test_alu;
+ENTITY test_muxb IS
+END test_muxb;
  
-ARCHITECTURE behavior OF test_alu IS 
+ARCHITECTURE behavior OF test_muxb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alu
+    COMPONENT muxb
     PORT(
-         S_alu : IN  std_logic_vector(31 downto 0);
-         A : IN  std_logic_vector(31 downto 0);
-         B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         I0b : IN  std_logic_vector(31 downto 0);
+         I1b : IN  std_logic_vector(31 downto 0);
+         Sel_muxb : IN  std_logic;
+         O_muxb : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal S_alu : std_logic_vector(31 downto 0) := (others => '0');
-   signal A : std_logic_vector(31 downto 0) := (others => '0');
-   signal B : std_logic_vector(31 downto 0) := (others => '0');
+   signal I0b : std_logic_vector(31 downto 0) := (others => '0');
+   signal I1b : std_logic_vector(31 downto 0) := (others => '0');
+   signal Sel_muxb : std_logic := '0';
 
  	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
-   signal F : std_logic_vector(31 downto 0);
+   signal O_muxb : std_logic_vector(31 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
  
@@ -65,12 +63,11 @@ ARCHITECTURE behavior OF test_alu IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alu PORT MAP (
-          S_alu => S_alu,
-          A => A,
-          B => B,
-          Flags => Flags,
-          F => F
+   uut: muxb PORT MAP (
+          I0b => I0b,
+          I1b => I1b,
+          Sel_muxb => Sel_muxb,
+          O_muxb => O_muxb
         );
 
    -- Clock process definitions
@@ -81,6 +78,7 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+
 
       -- insert stimulus here 
 

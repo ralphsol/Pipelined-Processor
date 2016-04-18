@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   09:02:41 03/28/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
+-- Module Name:   D:/processor/test_extend.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: alu
+-- VHDL Test Bench Created by ISE for module: extend
 -- 
 -- Dependencies:
 -- 
@@ -32,45 +32,35 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_alu IS
-END test_alu;
+ENTITY test_extend IS
+END test_extend;
  
-ARCHITECTURE behavior OF test_alu IS 
+ARCHITECTURE behavior OF test_extend IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alu
+    COMPONENT extend
     PORT(
-         S_alu : IN  std_logic_vector(31 downto 0);
-         A : IN  std_logic_vector(31 downto 0);
-         B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         I_extend : IN  std_logic_vector(11 downto 0);
+         O_extend : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal S_alu : std_logic_vector(31 downto 0) := (others => '0');
-   signal A : std_logic_vector(31 downto 0) := (others => '0');
-   signal B : std_logic_vector(31 downto 0) := (others => '0');
+   signal I_extend : std_logic_vector(11 downto 0) := (others => '0');
 
  	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
-   signal F : std_logic_vector(31 downto 0);
+   signal O_extend : std_logic_vector(31 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
- 
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alu PORT MAP (
-          S_alu => S_alu,
-          A => A,
-          B => B,
-          Flags => Flags,
-          F => F
+   uut: extend PORT MAP (
+          I_extend => I_extend,
+          O_extend => O_extend
         );
 
    -- Clock process definitions
@@ -81,6 +71,7 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+
 
       -- insert stimulus here 
 

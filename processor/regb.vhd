@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    17:15:04 04/14/2016 
+-- Create Date:    22:19:12 04/04/2016 
 -- Design Name: 
--- Module Name:    actrl - Behavioral 
+-- Module Name:    regb - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,19 +29,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity actrl is
-port( ac_curr	: 	in std_logic_vector(3 downto 0);		-- curr_state : cs1 for opc
-		ac_ir		:	in std_logic_vector(3 downto 0);		-- IR[24-21]
-		ac_op		: 	out std_logic_vector(6 downto 0)		-- opc : IR[26-21]
-	);
-end actrl;
+entity regb is
+port (clock_rega	: 	in std_logic;
+		regb_we		:	in std_logic_vector(;
+		regb_data_in:	in std_logic_vector(31 downto 0);				-- write data 
+		regb_data_out:	out std_logic_vector(31 downto 0)				-- read data
+);
+end regb;
 
-architecture Behavioral of actrl is
+architecture Behavioral of regb is
 
 begin
-	process(ac_curr, ac_ir)
-	begin
-		ac_op(3 downto 0) <= ac_ir;
-	end process;
+
+
 end Behavioral;
 

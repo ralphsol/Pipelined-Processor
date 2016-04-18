@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    17:15:04 04/14/2016 
+-- Create Date:    19:54:56 03/11/2016 
 -- Design Name: 
--- Module Name:    actrl - Behavioral 
+-- Module Name:    muxn1 - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,19 +29,25 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity actrl is
-port( ac_curr	: 	in std_logic_vector(3 downto 0);		-- curr_state : cs1 for opc
-		ac_ir		:	in std_logic_vector(3 downto 0);		-- IR[24-21]
-		ac_op		: 	out std_logic_vector(6 downto 0)		-- opc : IR[26-21]
+entity muxn1 is
+port( I0n1: 	in std_logic_vector(3 downto 0);
+		I1n1: 	in std_logic_vector(3 downto 0);
+		Sel_muxn1:	in std_logic;
+		O_muxn1: 		out std_logic_vector(3 downto 0)
 	);
-end actrl;
+end muxn1;
 
-architecture Behavioral of actrl is
+architecture Behavioral of muxn1 is
 
 begin
-	process(ac_curr, ac_ir)
-	begin
-		ac_op(3 downto 0) <= ac_ir;
-	end process;
+	process(I0n1, I1n1, Sel_muxn1)
+    begin
+        case Sel_muxn1 is
+            when '0' =>	O_muxn1 <= I0n1;
+            when '1' => O_muxn1 <= I1n1;
+				when others =>
+        end case;
+    end process;
+
 end Behavioral;
 

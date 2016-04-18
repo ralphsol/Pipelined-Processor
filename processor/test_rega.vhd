@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   22:15:53 04/04/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
+-- Module Name:   D:/processor/test_rega.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: alu
+-- VHDL Test Bench Created by ISE for module: rega
 -- 
 -- Dependencies:
 -- 
@@ -32,48 +32,52 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_alu IS
-END test_alu;
+ENTITY test_rega IS
+END test_rega;
  
-ARCHITECTURE behavior OF test_alu IS 
+ARCHITECTURE behavior OF test_rega IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alu
+    COMPONENT rega
     PORT(
-         S_alu : IN  std_logic_vector(31 downto 0);
-         A : IN  std_logic_vector(31 downto 0);
-         B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         clock_rega : IN  std_logic;
+         rega_we : IN  std_logic;
+         rega_data_in : IN  std_logic_vector(31 downto 0);
+         rega_data_out : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal S_alu : std_logic_vector(31 downto 0) := (others => '0');
-   signal A : std_logic_vector(31 downto 0) := (others => '0');
-   signal B : std_logic_vector(31 downto 0) := (others => '0');
+   signal clock_rega : std_logic := '0';
+   signal rega_we : std_logic := '0';
+   signal rega_data_in : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
-   signal F : std_logic_vector(31 downto 0);
-   -- No clocks detected in port list. Replace <clock> below with 
-   -- appropriate port name 
- 
+   signal rega_data_out : std_logic_vector(31 downto 0);
+
+   -- Clock period definitions
+   constant clock_rega_period : time := 10 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alu PORT MAP (
-          S_alu => S_alu,
-          A => A,
-          B => B,
-          Flags => Flags,
-          F => F
+   uut: rega PORT MAP (
+          clock_rega => clock_rega,
+          rega_we => rega_we,
+          rega_data_in => rega_data_in,
+          rega_data_out => rega_data_out
         );
 
    -- Clock process definitions
+   clock_rega_process :process
+   begin
+		clock_rega <= '0';
+		wait for clock_rega_period/2;
+		clock_rega <= '1';
+		wait for clock_rega_period/2;
+   end process;
  
 
    -- Stimulus process
@@ -81,6 +85,8 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+
+      wait for clock_rega_period*10;
 
       -- insert stimulus here 
 

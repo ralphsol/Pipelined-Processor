@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   08:51:30 03/28/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
+-- Module Name:   D:/processor/test_addb.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: alu
+-- VHDL Test Bench Created by ISE for module: addb
 -- 
 -- Dependencies:
 -- 
@@ -32,45 +32,38 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_alu IS
-END test_alu;
+ENTITY test_addb IS
+END test_addb;
  
-ARCHITECTURE behavior OF test_alu IS 
+ARCHITECTURE behavior OF test_addb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alu
+    COMPONENT addb
     PORT(
-         S_alu : IN  std_logic_vector(31 downto 0);
-         A : IN  std_logic_vector(31 downto 0);
-         B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         I1_addb : IN  std_logic_vector(31 downto 0);
+         I2_addb : IN  std_logic_vector(31 downto 0);
+         O_addb : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal S_alu : std_logic_vector(31 downto 0) := (others => '0');
-   signal A : std_logic_vector(31 downto 0) := (others => '0');
-   signal B : std_logic_vector(31 downto 0) := (others => '0');
+   signal I1_addb : std_logic_vector(31 downto 0) := (others => '0');
+   signal I2_addb : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
-   signal F : std_logic_vector(31 downto 0);
+   signal O_addb : std_logic_vector(31 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
- 
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alu PORT MAP (
-          S_alu => S_alu,
-          A => A,
-          B => B,
-          Flags => Flags,
-          F => F
+   uut: addb PORT MAP (
+          I1_addb => I1_addb,
+          I2_addb => I2_addb,
+          O_addb => O_addb
         );
 
    -- Clock process definitions

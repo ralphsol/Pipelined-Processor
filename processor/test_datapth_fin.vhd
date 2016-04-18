@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   00:26:45 04/05/2016
+-- Create Date:   23:22:21 04/04/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_datapath_fin.vhd
+-- Module Name:   D:/processor/test_datapth_fin.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
@@ -32,10 +32,10 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_datapath_fin IS
-END test_datapath_fin;
+ENTITY test_datapth_fin IS
+END test_datapth_fin;
  
-ARCHITECTURE behavior OF test_datapath_fin IS 
+ARCHITECTURE behavior OF test_datapth_fin IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
@@ -66,10 +66,7 @@ ARCHITECTURE behavior OF test_datapath_fin IS
          regexmem3_we_dp : IN  std_logic;
          regmemwb1_we_dp : IN  std_logic;
          regmemwb2_we_dp : IN  std_logic;
-         regmemwb3_we_dp : IN  std_logic;
-         Sel_muxn2_dp : IN  std_logic_vector(1 downto 0);
-         Sel_muxn3_dp : IN  std_logic_vector(1 downto 0);
-         Sel_muxn4_dp : IN  std_logic
+         regmemwb3_we_dp : IN  std_logic
         );
     END COMPONENT;
     
@@ -99,9 +96,6 @@ ARCHITECTURE behavior OF test_datapath_fin IS
    signal regmemwb1_we_dp : std_logic := '0';
    signal regmemwb2_we_dp : std_logic := '0';
    signal regmemwb3_we_dp : std_logic := '0';
-   signal Sel_muxn2_dp : std_logic_vector(1 downto 0) := (others => '0');
-   signal Sel_muxn3_dp : std_logic_vector(1 downto 0) := (others => '0');
-   signal Sel_muxn4_dp : std_logic := '0';
 
  	--Outputs
    signal actrlout_dp : std_logic_vector(5 downto 0);
@@ -139,10 +133,7 @@ BEGIN
           regexmem3_we_dp => regexmem3_we_dp,
           regmemwb1_we_dp => regmemwb1_we_dp,
           regmemwb2_we_dp => regmemwb2_we_dp,
-          regmemwb3_we_dp => regmemwb3_we_dp,
-          Sel_muxn2_dp => Sel_muxn2_dp,
-          Sel_muxn3_dp => Sel_muxn3_dp,
-          Sel_muxn4_dp => Sel_muxn4_dp
+          regmemwb3_we_dp => regmemwb3_we_dp
         );
 
    -- Clock process definitions

@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   13:32:45 04/03/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
+-- Module Name:   D:/processor/test_bctrl.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: alu
+-- VHDL Test Bench Created by ISE for module: bctrl
 -- 
 -- Dependencies:
 -- 
@@ -32,50 +32,41 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_alu IS
-END test_alu;
+ENTITY test_bctrl IS
+END test_bctrl;
  
-ARCHITECTURE behavior OF test_alu IS 
+ARCHITECTURE behavior OF test_bctrl IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alu
+    COMPONENT bctrl
     PORT(
-         S_alu : IN  std_logic_vector(31 downto 0);
-         A : IN  std_logic_vector(31 downto 0);
-         B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         I_bctrl : IN  std_logic_vector(3 downto 0);
+         I_zcnv : IN  std_logic_vector(3 downto 0);
+         O_bctrl : OUT  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
-   signal S_alu : std_logic_vector(31 downto 0) := (others => '0');
-   signal A : std_logic_vector(31 downto 0) := (others => '0');
-   signal B : std_logic_vector(31 downto 0) := (others => '0');
+   signal I_bctrl : std_logic_vector(3 downto 0) := (others => '0');
+   signal I_zcnv : std_logic_vector(3 downto 0) := (others => '0');
 
  	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
-   signal F : std_logic_vector(31 downto 0);
+   signal O_bctrl : std_logic;
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
- 
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alu PORT MAP (
-          S_alu => S_alu,
-          A => A,
-          B => B,
-          Flags => Flags,
-          F => F
+   uut: bctrl PORT MAP (
+          I_bctrl => I_bctrl,
+          I_zcnv => I_zcnv,
+          O_bctrl => O_bctrl
         );
 
    -- Clock process definitions
- 
-
    -- Stimulus process
    stim_proc: process
    begin		

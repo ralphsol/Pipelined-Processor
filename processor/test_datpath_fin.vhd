@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   00:26:45 04/05/2016
+-- Create Date:   13:49:40 04/03/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_datapath_fin.vhd
+-- Module Name:   D:/processor/test_datpath_fin.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
@@ -32,10 +32,10 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_datapath_fin IS
-END test_datapath_fin;
+ENTITY test_datpath_fin IS
+END test_datpath_fin;
  
-ARCHITECTURE behavior OF test_datapath_fin IS 
+ARCHITECTURE behavior OF test_datpath_fin IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
@@ -54,22 +54,7 @@ ARCHITECTURE behavior OF test_datapath_fin IS
          Sel_muxd_dp : IN  std_logic;
          actrlout_dp : OUT  std_logic_vector(5 downto 0);
          I_zcnv_dp : IN  std_logic_vector(3 downto 0);
-         O_ctrl_dp : OUT  std_logic_vector(5 downto 0);
-         regifid_we_dp : IN  std_logic;
-         regidex1_we_dp : IN  std_logic;
-         regidex2_we_dp : IN  std_logic;
-         regidex3_we_dp : IN  std_logic;
-         regidex4_we_dp : IN  std_logic;
-         regidex5_we_dp : IN  std_logic;
-         regexmem1_we_dp : IN  std_logic;
-         regexmem2_we_dp : IN  std_logic;
-         regexmem3_we_dp : IN  std_logic;
-         regmemwb1_we_dp : IN  std_logic;
-         regmemwb2_we_dp : IN  std_logic;
-         regmemwb3_we_dp : IN  std_logic;
-         Sel_muxn2_dp : IN  std_logic_vector(1 downto 0);
-         Sel_muxn3_dp : IN  std_logic_vector(1 downto 0);
-         Sel_muxn4_dp : IN  std_logic
+         O_ctrl_dp : OUT  std_logic_vector(5 downto 0)
         );
     END COMPONENT;
     
@@ -87,21 +72,6 @@ ARCHITECTURE behavior OF test_datapath_fin IS
    signal Sel_muxc_dp : std_logic := '0';
    signal Sel_muxd_dp : std_logic := '0';
    signal I_zcnv_dp : std_logic_vector(3 downto 0) := (others => '0');
-   signal regifid_we_dp : std_logic := '0';
-   signal regidex1_we_dp : std_logic := '0';
-   signal regidex2_we_dp : std_logic := '0';
-   signal regidex3_we_dp : std_logic := '0';
-   signal regidex4_we_dp : std_logic := '0';
-   signal regidex5_we_dp : std_logic := '0';
-   signal regexmem1_we_dp : std_logic := '0';
-   signal regexmem2_we_dp : std_logic := '0';
-   signal regexmem3_we_dp : std_logic := '0';
-   signal regmemwb1_we_dp : std_logic := '0';
-   signal regmemwb2_we_dp : std_logic := '0';
-   signal regmemwb3_we_dp : std_logic := '0';
-   signal Sel_muxn2_dp : std_logic_vector(1 downto 0) := (others => '0');
-   signal Sel_muxn3_dp : std_logic_vector(1 downto 0) := (others => '0');
-   signal Sel_muxn4_dp : std_logic := '0';
 
  	--Outputs
    signal actrlout_dp : std_logic_vector(5 downto 0);
@@ -127,22 +97,7 @@ BEGIN
           Sel_muxd_dp => Sel_muxd_dp,
           actrlout_dp => actrlout_dp,
           I_zcnv_dp => I_zcnv_dp,
-          O_ctrl_dp => O_ctrl_dp,
-          regifid_we_dp => regifid_we_dp,
-          regidex1_we_dp => regidex1_we_dp,
-          regidex2_we_dp => regidex2_we_dp,
-          regidex3_we_dp => regidex3_we_dp,
-          regidex4_we_dp => regidex4_we_dp,
-          regidex5_we_dp => regidex5_we_dp,
-          regexmem1_we_dp => regexmem1_we_dp,
-          regexmem2_we_dp => regexmem2_we_dp,
-          regexmem3_we_dp => regexmem3_we_dp,
-          regmemwb1_we_dp => regmemwb1_we_dp,
-          regmemwb2_we_dp => regmemwb2_we_dp,
-          regmemwb3_we_dp => regmemwb3_we_dp,
-          Sel_muxn2_dp => Sel_muxn2_dp,
-          Sel_muxn3_dp => Sel_muxn3_dp,
-          Sel_muxn4_dp => Sel_muxn4_dp
+          O_ctrl_dp => O_ctrl_dp
         );
 
    -- Clock process definitions

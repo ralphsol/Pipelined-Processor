@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   17:03:13 04/14/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
+-- Module Name:   D:/processor/test_state_ctrl.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: alu
+-- VHDL Test Bench Created by ISE for module: state_ctrl
 -- 
 -- Dependencies:
 -- 
@@ -32,32 +32,28 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_alu IS
-END test_alu;
+ENTITY test_state_ctrl IS
+END test_state_ctrl;
  
-ARCHITECTURE behavior OF test_alu IS 
+ARCHITECTURE behavior OF test_state_ctrl IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alu
+    COMPONENT state_ctrl
     PORT(
-         S_alu : IN  std_logic_vector(31 downto 0);
-         A : IN  std_logic_vector(31 downto 0);
-         B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         curr_state : IN  std_logic_vector(3 downto 0);
+         I_ir : IN  std_logic_vector(2 downto 0);
+         next_state : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal S_alu : std_logic_vector(31 downto 0) := (others => '0');
-   signal A : std_logic_vector(31 downto 0) := (others => '0');
-   signal B : std_logic_vector(31 downto 0) := (others => '0');
+   signal curr_state : std_logic_vector(3 downto 0) := (others => '0');
+   signal I_ir : std_logic_vector(2 downto 0) := (others => '0');
 
  	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
-   signal F : std_logic_vector(31 downto 0);
+   signal next_state : std_logic_vector(3 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
  
@@ -65,12 +61,10 @@ ARCHITECTURE behavior OF test_alu IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alu PORT MAP (
-          S_alu => S_alu,
-          A => A,
-          B => B,
-          Flags => Flags,
-          F => F
+   uut: state_ctrl PORT MAP (
+          curr_state => curr_state,
+          I_ir => I_ir,
+          next_state => next_state
         );
 
    -- Clock process definitions

@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   00:26:45 04/05/2016
+-- Create Date:   16:38:59 04/18/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_datapath_fin.vhd
+-- Module Name:   D:/processor/test_cotroller.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: datapath_fin
+-- VHDL Test Bench Created by ISE for module: controller
 -- 
 -- Dependencies:
 -- 
@@ -32,29 +32,17 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_datapath_fin IS
-END test_datapath_fin;
+ENTITY test_cotroller IS
+END test_cotroller;
  
-ARCHITECTURE behavior OF test_datapath_fin IS 
+ARCHITECTURE behavior OF test_cotroller IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT datapath_fin
+    COMPONENT controller
     PORT(
          clock_dp : IN  std_logic;
          pcin_dp : IN  std_logic_vector(31 downto 0);
-         RFwe_dp : IN  std_logic;
-         RFr1e_dp : IN  std_logic;
-         RFr2e_dp : IN  std_logic;
-         Sel_muxa_dp : IN  std_logic;
-         Sel_muxb_dp : IN  std_logic;
-         Mre_dp : IN  std_logic;
-         Mwe_dp : IN  std_logic;
-         Sel_muxc_dp : IN  std_logic;
-         Sel_muxd_dp : IN  std_logic;
-         actrlout_dp : OUT  std_logic_vector(5 downto 0);
-         I_zcnv_dp : IN  std_logic_vector(3 downto 0);
-         O_ctrl_dp : OUT  std_logic_vector(5 downto 0);
          regifid_we_dp : IN  std_logic;
          regidex1_we_dp : IN  std_logic;
          regidex2_we_dp : IN  std_logic;
@@ -67,6 +55,7 @@ ARCHITECTURE behavior OF test_datapath_fin IS
          regmemwb1_we_dp : IN  std_logic;
          regmemwb2_we_dp : IN  std_logic;
          regmemwb3_we_dp : IN  std_logic;
+         regmemwb4_we_dp : IN  std_logic;
          Sel_muxn2_dp : IN  std_logic_vector(1 downto 0);
          Sel_muxn3_dp : IN  std_logic_vector(1 downto 0);
          Sel_muxn4_dp : IN  std_logic
@@ -77,16 +66,6 @@ ARCHITECTURE behavior OF test_datapath_fin IS
    --Inputs
    signal clock_dp : std_logic := '0';
    signal pcin_dp : std_logic_vector(31 downto 0) := (others => '0');
-   signal RFwe_dp : std_logic := '0';
-   signal RFr1e_dp : std_logic := '0';
-   signal RFr2e_dp : std_logic := '0';
-   signal Sel_muxa_dp : std_logic := '0';
-   signal Sel_muxb_dp : std_logic := '0';
-   signal Mre_dp : std_logic := '0';
-   signal Mwe_dp : std_logic := '0';
-   signal Sel_muxc_dp : std_logic := '0';
-   signal Sel_muxd_dp : std_logic := '0';
-   signal I_zcnv_dp : std_logic_vector(3 downto 0) := (others => '0');
    signal regifid_we_dp : std_logic := '0';
    signal regidex1_we_dp : std_logic := '0';
    signal regidex2_we_dp : std_logic := '0';
@@ -99,13 +78,10 @@ ARCHITECTURE behavior OF test_datapath_fin IS
    signal regmemwb1_we_dp : std_logic := '0';
    signal regmemwb2_we_dp : std_logic := '0';
    signal regmemwb3_we_dp : std_logic := '0';
+   signal regmemwb4_we_dp : std_logic := '0';
    signal Sel_muxn2_dp : std_logic_vector(1 downto 0) := (others => '0');
    signal Sel_muxn3_dp : std_logic_vector(1 downto 0) := (others => '0');
    signal Sel_muxn4_dp : std_logic := '0';
-
- 	--Outputs
-   signal actrlout_dp : std_logic_vector(5 downto 0);
-   signal O_ctrl_dp : std_logic_vector(5 downto 0);
 
    -- Clock period definitions
    constant clock_dp_period : time := 10 ns;
@@ -113,21 +89,9 @@ ARCHITECTURE behavior OF test_datapath_fin IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: datapath_fin PORT MAP (
+   uut: controller PORT MAP (
           clock_dp => clock_dp,
           pcin_dp => pcin_dp,
-          RFwe_dp => RFwe_dp,
-          RFr1e_dp => RFr1e_dp,
-          RFr2e_dp => RFr2e_dp,
-          Sel_muxa_dp => Sel_muxa_dp,
-          Sel_muxb_dp => Sel_muxb_dp,
-          Mre_dp => Mre_dp,
-          Mwe_dp => Mwe_dp,
-          Sel_muxc_dp => Sel_muxc_dp,
-          Sel_muxd_dp => Sel_muxd_dp,
-          actrlout_dp => actrlout_dp,
-          I_zcnv_dp => I_zcnv_dp,
-          O_ctrl_dp => O_ctrl_dp,
           regifid_we_dp => regifid_we_dp,
           regidex1_we_dp => regidex1_we_dp,
           regidex2_we_dp => regidex2_we_dp,
@@ -140,6 +104,7 @@ BEGIN
           regmemwb1_we_dp => regmemwb1_we_dp,
           regmemwb2_we_dp => regmemwb2_we_dp,
           regmemwb3_we_dp => regmemwb3_we_dp,
+          regmemwb4_we_dp => regmemwb4_we_dp,
           Sel_muxn2_dp => Sel_muxn2_dp,
           Sel_muxn3_dp => Sel_muxn3_dp,
           Sel_muxn4_dp => Sel_muxn4_dp

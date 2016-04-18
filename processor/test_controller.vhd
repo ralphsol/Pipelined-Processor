@@ -2,10 +2,10 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   10:44:53 04/11/2016
+-- Create Date:   17:05:39 04/18/2016
 -- Design Name:   
--- Module Name:   D:/Assignment3/test_controller.vhd
--- Project Name:  Assignment3
+-- Module Name:   D:/processor/test_controller.vhd
+-- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
@@ -41,13 +41,57 @@ ARCHITECTURE behavior OF test_controller IS
  
     COMPONENT controller
     PORT(
-         clock_dp : IN  std_logic
+         clock_dp : IN  std_logic;
+         pcin_dp : IN  std_logic_vector(31 downto 0);
+         regifid_we_dp : IN  std_logic;
+         regidex1_we_dp : IN  std_logic;
+         regidex2_we_dp : IN  std_logic;
+         regidex3_we_dp : IN  std_logic;
+         regidex4_we_dp : IN  std_logic;
+         regidex5_we_dp : IN  std_logic;
+         regidex6_we_dp : IN  std_logic;
+         regidex7_we_dp : IN  std_logic;
+         regidex8_we_dp : IN  std_logic;
+         regexmem1_we_dp : IN  std_logic;
+         regexmem2_we_dp : IN  std_logic;
+         regexmem3_we_dp : IN  std_logic;
+         regmemwb1_we_dp : IN  std_logic;
+         regmemwb2_we_dp : IN  std_logic;
+         regmemwb3_we_dp : IN  std_logic;
+         regmemwb4_we_dp : IN  std_logic;
+         regexmem4_we_dp : IN  std_logic;
+         regexmem5_we_dp : IN  std_logic;
+         Sel_muxn2_dp : IN  std_logic_vector(1 downto 0);
+         Sel_muxn3_dp : IN  std_logic_vector(1 downto 0);
+         Sel_muxn4_dp : IN  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
    signal clock_dp : std_logic := '0';
+   signal pcin_dp : std_logic_vector(31 downto 0) := (others => '0');
+   signal regifid_we_dp : std_logic := '0';
+   signal regidex1_we_dp : std_logic := '0';
+   signal regidex2_we_dp : std_logic := '0';
+   signal regidex3_we_dp : std_logic := '0';
+   signal regidex4_we_dp : std_logic := '0';
+   signal regidex5_we_dp : std_logic := '0';
+   signal regidex6_we_dp : std_logic := '0';
+   signal regidex7_we_dp : std_logic := '0';
+   signal regidex8_we_dp : std_logic := '0';
+   signal regexmem1_we_dp : std_logic := '0';
+   signal regexmem2_we_dp : std_logic := '0';
+   signal regexmem3_we_dp : std_logic := '0';
+   signal regmemwb1_we_dp : std_logic := '0';
+   signal regmemwb2_we_dp : std_logic := '0';
+   signal regmemwb3_we_dp : std_logic := '0';
+   signal regmemwb4_we_dp : std_logic := '0';
+   signal regexmem4_we_dp : std_logic := '0';
+   signal regexmem5_we_dp : std_logic := '0';
+   signal Sel_muxn2_dp : std_logic_vector(1 downto 0) := (others => '0');
+   signal Sel_muxn3_dp : std_logic_vector(1 downto 0) := (others => '0');
+   signal Sel_muxn4_dp : std_logic := '0';
 
    -- Clock period definitions
    constant clock_dp_period : time := 10 ns;
@@ -56,7 +100,29 @@ BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: controller PORT MAP (
-          clock_dp => clock_dp
+          clock_dp => clock_dp,
+          pcin_dp => pcin_dp,
+          regifid_we_dp => regifid_we_dp,
+          regidex1_we_dp => regidex1_we_dp,
+          regidex2_we_dp => regidex2_we_dp,
+          regidex3_we_dp => regidex3_we_dp,
+          regidex4_we_dp => regidex4_we_dp,
+          regidex5_we_dp => regidex5_we_dp,
+          regidex6_we_dp => regidex6_we_dp,
+          regidex7_we_dp => regidex7_we_dp,
+          regidex8_we_dp => regidex8_we_dp,
+          regexmem1_we_dp => regexmem1_we_dp,
+          regexmem2_we_dp => regexmem2_we_dp,
+          regexmem3_we_dp => regexmem3_we_dp,
+          regmemwb1_we_dp => regmemwb1_we_dp,
+          regmemwb2_we_dp => regmemwb2_we_dp,
+          regmemwb3_we_dp => regmemwb3_we_dp,
+          regmemwb4_we_dp => regmemwb4_we_dp,
+          regexmem4_we_dp => regexmem4_we_dp,
+          regexmem5_we_dp => regexmem5_we_dp,
+          Sel_muxn2_dp => Sel_muxn2_dp,
+          Sel_muxn3_dp => Sel_muxn3_dp,
+          Sel_muxn4_dp => Sel_muxn4_dp
         );
 
    -- Clock process definitions

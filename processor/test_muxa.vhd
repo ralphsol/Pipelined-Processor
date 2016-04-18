@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:32:55 04/03/2016
+-- Create Date:   08:55:32 03/28/2016
 -- Design Name:   
--- Module Name:   D:/processor/test_alu.vhd
+-- Module Name:   D:/processor/test_muxa.vhd
 -- Project Name:  processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: alu
+-- VHDL Test Bench Created by ISE for module: muxa
 -- 
 -- Dependencies:
 -- 
@@ -32,32 +32,30 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_alu IS
-END test_alu;
+ENTITY test_muxa IS
+END test_muxa;
  
-ARCHITECTURE behavior OF test_alu IS 
+ARCHITECTURE behavior OF test_muxa IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alu
+    COMPONENT muxa
     PORT(
-         S_alu : IN  std_logic_vector(31 downto 0);
-         A : IN  std_logic_vector(31 downto 0);
-         B : IN  std_logic_vector(31 downto 0);
-         Flags : OUT  std_logic_vector(1 downto 0);
-         F : OUT  std_logic_vector(31 downto 0)
+         I0a : IN  std_logic_vector(3 downto 0);
+         I1a : IN  std_logic_vector(3 downto 0);
+         Sel_muxa : IN  std_logic;
+         O_muxa : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal S_alu : std_logic_vector(31 downto 0) := (others => '0');
-   signal A : std_logic_vector(31 downto 0) := (others => '0');
-   signal B : std_logic_vector(31 downto 0) := (others => '0');
+   signal I0a : std_logic_vector(3 downto 0) := (others => '0');
+   signal I1a : std_logic_vector(3 downto 0) := (others => '0');
+   signal Sel_muxa : std_logic := '0';
 
  	--Outputs
-   signal Flags : std_logic_vector(1 downto 0);
-   signal F : std_logic_vector(31 downto 0);
+   signal O_muxa : std_logic_vector(3 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
  
@@ -65,12 +63,11 @@ ARCHITECTURE behavior OF test_alu IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alu PORT MAP (
-          S_alu => S_alu,
-          A => A,
-          B => B,
-          Flags => Flags,
-          F => F
+   uut: muxa PORT MAP (
+          I0a => I0a,
+          I1a => I1a,
+          Sel_muxa => Sel_muxa,
+          O_muxa => O_muxa
         );
 
    -- Clock process definitions
